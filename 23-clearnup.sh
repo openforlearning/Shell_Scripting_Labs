@@ -11,7 +11,7 @@ source_dir=$1
 days=${2:-14} # if user is not defining days, then defaults to 14 days
 
 usage(){
-    echo "Usage: $0 [source_dir] [days(optional, default to 4days)]${N}"
+    echo "${R}Usage: $0 [source_dir] [days(optional, default to 14days)]${N}"
     exit 1
 }
 
