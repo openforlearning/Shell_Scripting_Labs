@@ -34,19 +34,19 @@ if [ ! -d "$dest_dir" ]; then
     exit 1
 fi
 
-##Find the files older than 14 days
-#echo "Scanning files older than $days in $source_dir"
-#
-##Delete files
-#files_to_delete=$(find $source_dir -type f -mtime +$days) 
-#
-#if [ -z "$files_to_delete" ]; then
-#    echo "No log files found older than $days"
-#    exit 0
-#fi
-#
+#Find the files older than 14 days
+echo "Scanning files older than $days in $source_dir"
+
+#Archive Files
+files_to_archive=$(find $source_dir -name "*.log" -type f -mtime +$days) 
+
+if [ -z "$files_to_archive" ]; then
+    echo "No log files found older than $days"
+    exit 0
+fi
+
 #while IFS= read -r line
 #do
-#    echo "File to be deleted: $line"
-#    rm -f $line
-#done <<< "$files_to_delete"
+#    echo "File to be archived: $line"
+#    
+#done <<< "$files_to_archive"
