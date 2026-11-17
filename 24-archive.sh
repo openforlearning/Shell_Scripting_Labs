@@ -16,7 +16,7 @@ usage(){
     exit 1
 }
 
-if [ -z "$source_dir" ] || [ -z "$dest_dir"]; then
+if [ -z "$source_dir" ] || [ -z "$dest_dir" ]; then
     echo "ERROR: Missing source or dest"
     usage
 fi
