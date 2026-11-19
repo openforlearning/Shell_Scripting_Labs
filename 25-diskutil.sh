@@ -10,6 +10,9 @@
 disk_usage=$(df -hT | grep -v Filesystem)
 threshold=20
 
+# If you want to run this script in any AWS EC2 Instance, then take the private IP
+# using curl https://169.254.169.254/latest/meta-data/local-ipv4 
+
 while IFS= read -r line
 do
     usage=$(echo $line | awk -F " " '{print $6}' | cut -d "%" -f1)
